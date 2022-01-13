@@ -13,7 +13,7 @@ final class BricksTypekit {
 		add_filter('bricks/theme_styles/controls', __CLASS__ .'::controls');
 		add_filter('bricks/builder/standard_fonts', __CLASS__ .'::standard_fonts');
 		add_action('wp_footer', __CLASS__ .'::ajax_update');
-		add_action('wp_ajax_update_typekit_fonts', __CLASS__ .'::update_typekit_fonts');
+		add_action('wp_ajax_bricks_update_typekit_fonts', __CLASS__ .'::update_typekit_fonts');
 	}
 
 	static public function controls( $controls ) {
