@@ -21,7 +21,7 @@ final class BricksTypekit {
 
 		$typekitControl = [ 'typekitID' => [
 				'type'        => 'text',
-				'label'       => esc_html__( 'Typekit ID', 'zest' ),
+				'label'       => esc_html__( 'Typekit Project ID', 'zest' ),
 				'group'         => 'typography',
 				'inline'    => true,
 				'pasteStyles'   => false,
