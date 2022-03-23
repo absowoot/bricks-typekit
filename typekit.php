@@ -51,7 +51,9 @@ final class BricksTypekit
 		if (empty(self::$typekit_id)) {
 			$theme_style_settings = Theme_Styles::$active_style_settings;
 			if (array_key_exists('typography', $theme_style_settings)) {
-				self::$typekit_id = $theme_style_settings['typography']['typekitID'];
+				if (array_key_exists('typekitID', $theme_style_settings['typography'])) {
+					self::$typekit_id = $theme_style_settings['typography']['typekitID'];
+				}
 			}
 		}
 
