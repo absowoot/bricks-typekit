@@ -49,7 +49,7 @@ final class BricksTypekit
 	static private function get_typekit_id()
 	{
 		if (empty(self::$typekit_id)) {
-			$theme_style_settings = Theme_Styles::$active_style_settings;
+			$theme_style_settings = Theme_Styles::$active_settings;
 			if (array_key_exists('typography', $theme_style_settings)) {
 				if (array_key_exists('typekitID', $theme_style_settings['typography'])) {
 					self::$typekit_id = $theme_style_settings['typography']['typekitID'];
@@ -62,7 +62,7 @@ final class BricksTypekit
 
 	static private function get_typekit_fonts()
 	{
-		$active_style_id = Theme_Styles::$active_style_id;
+		$active_style_id = Theme_Styles::$active_id;
 		self::$typekit_fonts_key =  'bricks_typekit_fonts_' . $active_style_id;
 
 		if (empty(self::$typekit_fonts)) {
