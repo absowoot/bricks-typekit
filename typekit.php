@@ -96,7 +96,8 @@ final class BricksTypekit
 			    $(function() {
 			        $('#bricks-panel').on('click', 'div[controlkey=\"typekitRefresh\"] .button', function () {
 			            $.post(window.bricksData.ajaxUrl, {
-			                action: 'bricks_update_typekit_fonts'
+			                action: 'bricks_update_typekit_fonts',
+											activeStyle: window.bricksData.loadData.themeStyleActive
 			            });
 			        });
 			    });
@@ -181,7 +182,10 @@ final class BricksTypekit
 
 	static public function update_typekit_fonts()
 	{
-		update_option(self::$typekit_fonts_key, '');
+		$active_style = sanitize_text_field($_POST['activeStyle']);
+		$typekit_fonts_key = 'bricks_typekit_fonts_' . $active_style;
+
+		update_option($typekit_fonts_key, '');
 
 		wp_die();
 	}
